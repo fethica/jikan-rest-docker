@@ -1,6 +1,6 @@
 FROM php:7.3.2-apache-stretch
 
-# RUN docker-php-ext-install mysqli
+# Install openssl, git and unzip
 RUN apt-get update && apt-get install -y \
     openssl \
     git \

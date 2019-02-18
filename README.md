@@ -1,4 +1,4 @@
-# JikanREST Docker
+# JikanREST Docker [![Build Status](https://travis-ci.org/fethica/jikan-rest-docker.svg?branch=master)](https://travis-ci.org/fethica/jikan-rest-docker)
 
 🐳 A docker stack for Jikan REST API:
 

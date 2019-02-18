@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+    jikan-rest:
+        build:
+            context: .
+        ports: 
+            - "9000:80"
+        links:
+        - redis
+        restart: always
+    redis:
+        image: redis:5.0.3
+        ports:
+          - "6382:6379"

@@ -29,7 +29,7 @@ Request `Anime` example:
 http://localhost:9000/public/v3/anime/1
 ```
 
-## More infos
+## More info
 
 - [Jikan REST API](https://github.com/jikan-me/jikan-rest)
 - [API docs](https://jikan.docs.apiary.io)

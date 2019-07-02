@@ -6,10 +6,15 @@ services:
             context: .
         ports: 
             - "9000:80"
-        links:
-        - redis
+        networks:
+          - default
         restart: always
+        image: jikan-rest-img
+        container_name: jikan-rest-api
     redis:
         image: redis:5.0.3
         ports:
           - "6382:6379"
+        networks:
+          - default
+        container_name: jikan-rest-redis

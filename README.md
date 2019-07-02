@@ -19,6 +19,7 @@ Build/run with your own redis server:
 
 ```bash
 vim .env  # change REDIS_HOST
+vim Dockerfile  # remove number sign (#) of line 21
 docker build . -t jikan-rest-img
 docker run -d -p 9000:80 --name jikan-rest-api jikan-rest-img
 ```

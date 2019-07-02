@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
  && git clone https://github.com/jikan-me/jikan-rest.git . \
  && composer install --prefer-dist --no-progress --no-suggest --classmap-authoritative  --no-interaction
 
-ADD .env run-jikan.sh ./
+ADD ${PWD}/.env ${PWD}/run-jikan.sh ./
 
 # ENTRYPOINT ["docker-php-entrypoint"]
 ENTRYPOINT ["./run-jikan.sh"]

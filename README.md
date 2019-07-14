@@ -1,4 +1,4 @@
-# JikanREST Docker [![Build Status](https://travis-ci.org/fethica/jikan-rest-docker.svg?branch=master)](https://travis-ci.org/fethica/jikan-rest-docker)
+# JikanREST Docker [![Build Status](https://travis-ci.org/tzw0745/jikan-rest-docker.svg?branch=master)](https://travis-ci.org/tzw0745/jikan-rest-docker)
 
 🐳 A docker stack for Jikan REST API:
 
@@ -8,11 +8,20 @@
 
 ## Installation
 
-Build/run containers:
+Build/run containers with `docker-compose`:
 
 ```bash
 $ docker-compose build
 $ docker-compose up -d
+```
+
+Build/run with your own redis server:
+
+```bash
+vim .env  # change REDIS_HOST
+vim Dockerfile  # remove number sign (#) of line 21
+docker build . -t jikan-rest-img
+docker run -d -p 9000:80 --name jikan-rest-api jikan-rest-img
 ```
 
 ## Usage

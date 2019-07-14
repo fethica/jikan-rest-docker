@@ -1,15 +1,23 @@
 version: "3.4"
 
 services:
-    jikan-rest:
-        build:
-            context: .
-        ports: 
-            - "9000:80"
-        links:
-        - redis
-        restart: always
-    redis:
-        image: redis:5.0.3
-        ports:
-          - "6382:6379"
+  jikan-rest:
+    build:
+      context: .
+    volumes:
+      - "./.env:/var/www/html/.env"
+      - "./run-jikan.sh:/var/www/html/run-jikan.sh"
+    ports:
+      - "9000:80"
+    networks:
+      - default
+    restart: always
+    image: jikan-rest-img
+    container_name: jikan-rest-api
+  redis:
+    image: redis:5.0.3
+    ports:
+      - "6382:6379"
+    networks:
+      - default
+    container_name: jikan-rest-redis
